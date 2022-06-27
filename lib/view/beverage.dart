@@ -29,7 +29,7 @@ class _FoodsState extends State<Beverage> {
 
   @override
   Widget build(BuildContext context) {
-    return loading == false
+    return loading == false && jsonurl.isNotEmpty
         ? SingleChildScrollView(
             child: Column(
               children: [
@@ -139,7 +139,8 @@ class _FoodsState extends State<Beverage> {
               ],
             ),
           )
-        : Container(
+        : 
+        Container(
             color: Colors.white,
             height: MediaQuery.of(context).size.height - 90,
             child: const Center(

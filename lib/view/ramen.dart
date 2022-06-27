@@ -12,7 +12,7 @@ class Ramen extends StatefulWidget {
 
 class _HomeAndLivingState extends State<Ramen> {
   var jsonurl = <Jsonurl>[];
-  bool loading= true;
+  bool? loading;
 
   @override
   void initState() {
@@ -28,9 +28,9 @@ class _HomeAndLivingState extends State<Ramen> {
 
   @override
   Widget build(BuildContext context) {
-    return loading
+    return loading == false && jsonurl.isNotEmpty
         ? SingleChildScrollView(
-          child: Column(
+            child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.only(top: 0.0, bottom: 20),
@@ -59,7 +59,7 @@ class _HomeAndLivingState extends State<Ramen> {
                 )
               ],
             ),
-        )
+          )
         : Container(
             color: Colors.white,
             height: MediaQuery.of(context).size.height - 90,

@@ -30,7 +30,7 @@ class _FoodsState extends State<HomeAndLiving> {
 
   @override
   Widget build(BuildContext context) {
-    return loading == false
+    return loading == false && jsonurl.isNotEmpty
         ? SingleChildScrollView(
             child: Column(
               children: [

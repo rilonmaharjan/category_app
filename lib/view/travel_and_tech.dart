@@ -28,7 +28,7 @@ class _HomeAndLivingState extends State<TravelandTech> {
 
   @override
   Widget build(BuildContext context) {
-    return loading == false
+    return loading == false && jsonurl.isNotEmpty
         ? SingleChildScrollView(
             child: Column(
               children: [
